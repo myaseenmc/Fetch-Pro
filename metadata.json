@@ -1,0 +1,5 @@
+{
+  "name": "StreamFetch Pro - M3U8 Downloader",
+  "description": "A high-performance browser-based M3U8 video downloader that parses playlists, fetches segments in parallel, and merges them into a single downloadable video file.",
+  "requestFramePermissions": []
+}
