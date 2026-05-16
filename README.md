@@ -1,20 +1,386 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
 
-# Run and deploy your AI Studio app
+# M3U8 Downloader
 
-This contains everything you need to run your app locally.
+A lightweight and powerful browser-based **M3U8/HLS video downloader** built using JavaScript.
 
-View your app in AI Studio: https://ai.studio/apps/drive/19Ojp60qKgDrg1yaPIaMjOXl-3FLcVzXl
+This project allows users to:
 
-## Run Locally
+- Parse `.m3u8` playlists
+- Download HLS video streams
+- Decrypt AES-128 encrypted segments
+- Merge `.ts` chunks into playable media
+- Export videos directly from the browser
+- Resume interrupted downloads
+- Track download progress in real time
 
-**Prerequisites:**  Node.js
+Designed as a fully client-side downloader, the application works without requiring a backend server.
 
+---
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+# ✨ Features
+
+## 🎥 M3U8 Playlist Parsing
+
+- Supports standard HLS `.m3u8` playlists
+- Automatically parses:
+  - Media playlists
+  - Variant playlists
+  - Nested playlists
+- Detects available video resolutions and stream qualities
+
+---
+
+## 📥 Segment Downloading
+
+Downloads all `.ts` video segments from the playlist.
+
+### Includes:
+
+- Parallel chunk downloading
+- Retry mechanism for failed segments
+- Sequential merge ordering
+- Real-time progress tracking
+- Pause/resume capability
+
+---
+
+## 🔓 AES-128 Decryption
+
+Supports encrypted HLS streams.
+
+### Supported:
+
+- AES-128 decryption
+- Key fetching from remote URLs
+- Automatic segment decryption in browser
+- Secure processing without external tools
+
+Uses the included:
+
+```text
+aes-decryptor.js
+````
+
+for browser-side decryption.
+
+---
+
+## 🎞 MP4 Conversion
+
+The downloader can merge transport stream files into playable video formats.
+
+### Supported Output:
+
+* `.ts`
+* `.mp4`
+
+Uses:
+
+```text
+mux-mp4.js
+```
+
+for media remuxing.
+
+---
+
+## 💾 Stream Saving
+
+Integrated large-file saving support using:
+
+```text
+StreamSaver.js
+```
+
+### Benefits:
+
+* Saves huge videos directly to disk
+* Reduces browser memory usage
+* Supports long recordings
+* Better handling for large HLS streams
+
+---
+
+## 📊 Real-Time Download Progress
+
+Displays detailed statistics while downloading:
+
+* Current segment
+* Download percentage
+* Download speed
+* Total segments
+* Completed segments
+* Estimated progress
+
+---
+
+## 🔄 Retry & Resume Support
+
+Robust recovery system for unstable networks.
+
+### Includes:
+
+* Automatic retries on failed downloads
+* Resume interrupted sessions
+* Chunk validation
+* Network error handling
+
+---
+
+## 🌐 Browser-Based Interface
+
+Runs entirely in the browser.
+
+### No Installation Required
+
+Simply open:
+
+```text
+index.html
+```
+
+or host the files on any static web server.
+
+---
+
+# 🧩 Userscript Support
+
+The repository includes:
+
+```text
+m3u8-downloader.user.js
+```
+
+### Features
+
+* Detects M3U8 streams automatically
+* Integrates with supported websites
+* One-click extraction
+* Browser extension/userscript workflow
+
+Compatible with:
+
+* Tampermonkey
+* Violentmonkey
+* Greasemonkey
+
+---
+
+# ⚙️ Service Worker Integration
+
+Includes:
+
+```text
+serviceWorker.js
+```
+
+### Purpose
+
+* Stream handling
+* File streaming optimization
+* Background processing
+* Improved browser download stability
+
+---
+
+# 🛠 Tech Stack
+
+| Technology       | Purpose           |
+| ---------------- | ----------------- |
+| JavaScript       | Core logic        |
+| Vue.js           | UI rendering      |
+| StreamSaver.js   | Large file saving |
+| Mux.js / mux-mp4 | MP4 remuxing      |
+| Service Workers  | Streaming support |
+| AES Decryptor    | HLS decryption    |
+
+---
+
+# 📁 Project Structure
+
+```text
+m3u8-downloader/
+│
+├── index.html                 # Main UI
+├── index-en.html              # English UI
+├── vue.js                     # Frontend framework
+├── aes-decryptor.js           # AES-128 decryption
+├── mux-mp4.js                 # MP4 remuxing
+├── StreamSaver.js             # File saving utility
+├── serviceWorker.js           # Browser streaming support
+├── mitm.html                  # Stream handling helper
+├── m3u8-downloader.user.js    # Userscript integration
+│
+├── imgs/                      # Screenshots and assets
+│
+├── README.md
+└── README-EN.md
+```
+
+---
+
+# 🚀 Getting Started
+
+## Option 1 — Run Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/myaseenmc/m3u8-downloader.git
+cd m3u8-downloader
+```
+
+Open:
+
+```text
+index.html
+```
+
+in your browser.
+
+---
+
+## Option 2 — Use Static Server
+
+Example using Python:
+
+```bash
+python -m http.server 8080
+```
+
+Then open:
+
+```text
+http://localhost:8080
+```
+
+---
+
+# 🧪 Supported Stream Types
+
+| Stream Type           | Support |
+| --------------------- | ------- |
+| Standard HLS          | ✅       |
+| Variant M3U8          | ✅       |
+| AES-128 Encrypted     | ✅       |
+| Live Streams          | Partial |
+| DRM Protected Streams | ❌       |
+
+---
+
+# 🖥 Browser Compatibility
+
+| Browser | Supported |
+| ------- | --------- |
+| Chrome  | ✅         |
+| Edge    | ✅         |
+| Firefox | ✅         |
+| Brave   | ✅         |
+| Opera   | ✅         |
+
+---
+
+# 🔐 Security & Privacy
+
+Everything runs locally in your browser.
+
+### No:
+
+* Server uploads
+* Cloud processing
+* External storage
+* User tracking
+
+All video processing happens client-side.
+
+---
+
+# 📸 Screenshots
+
+Add screenshots inside:
+
+```text
+imgs/
+```
+
+Example:
+
+```md
+![Downloader UI](imgs/screenshot.png)
+```
+
+---
+
+# 💡 Use Cases
+
+* Download online course videos
+* Save livestream archives
+* Backup HLS streams
+* Offline video viewing
+* Educational media archiving
+* Testing HLS infrastructure
+
+---
+
+# ⚠️ Limitations
+
+This downloader does NOT bypass:
+
+* DRM systems
+* Widevine protection
+* FairPlay encryption
+* PlayReady DRM
+
+Only standard HLS streams are supported.
+
+---
+
+# 🔮 Future Improvements
+
+Potential future enhancements:
+
+* Multi-threaded optimization
+* Better live-stream recording
+* Subtitle extraction
+* Audio-only export
+* Batch playlist downloads
+* Browser extension packaging
+* Mobile-friendly UI
+* FFmpeg WebAssembly integration
+
+---
+
+# 👨‍💻 Author
+
+Created by Yaseen
+
+GitHub:
+[https://github.com/myaseenmc](https://github.com/myaseenmc)
+
+---
+
+# 📄 License
+
+Add your preferred open-source license here.
+
+Example:
+
+```text
+MIT License
+```
+
+---
+
+# 🙌 Acknowledgements
+
+Inspired by the HLS streaming ecosystem and browser-based media tooling.
+
+Special thanks to:
+
+* Vue.js
+* StreamSaver.js
+* mux.js
+* Open-source HLS community
+
+::contentReference[oaicite:1]{index=1}
+```
