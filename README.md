@@ -129,41 +129,7 @@ Robust recovery system for unstable networks.
 
 ## 🌐 Browser-Based Interface
 
-Runs entirely in the browser.
-
-# 🛠 Tech Stack
-
-| Technology       | Purpose           |
-| ---------------- | ----------------- |
-| JavaScript       | Core logic        |
-| Vue.js           | UI rendering      |
-| StreamSaver.js   | Large file saving |
-| Mux.js / mux-mp4 | MP4 remuxing      |
-| Service Workers  | Streaming support |
-| AES Decryptor    | HLS decryption    |
-
----
-
-# 📁 Project Structure
-
-```text
-m3u8-downloader/
-│
-├── index.html                 # Main UI
-├── index-en.html              # English UI
-├── vue.js                     # Frontend framework
-├── aes-decryptor.js           # AES-128 decryption
-├── mux-mp4.js                 # MP4 remuxing
-├── StreamSaver.js             # File saving utility
-├── serviceWorker.js           # Browser streaming support
-├── mitm.html                  # Stream handling helper
-├── m3u8-downloader.user.js    # Userscript integration
-│
-├── imgs/                      # Screenshots and assets
-│
-├── README.md
-└── README-EN.md
-```
+Runs entirely in the browser
 
 ---
 
@@ -171,11 +137,11 @@ m3u8-downloader/
 
 | Stream Type           | Support |
 | --------------------- | ------- |
-| Standard HLS          | ✅       |
-| Variant M3U8          | ✅       |
-| AES-128 Encrypted     | ✅       |
+| Standard HLS          | ✅      |
+| Variant M3U8          | ✅      |
+| AES-128 Encrypted     | ✅      |
 | Live Streams          | Partial |
-| DRM Protected Streams | ❌       |
+| DRM Protected Streams | ❌      |
 
 ---
 
@@ -183,11 +149,11 @@ m3u8-downloader/
 
 | Browser | Supported |
 | ------- | --------- |
-| Chrome  | ✅         |
-| Edge    | ✅         |
-| Firefox | ✅         |
-| Brave   | ✅         |
-| Opera   | ✅         |
+| Chrome  | ✅        |
+| Edge    | ✅        |
+| Firefox | ✅        |
+| Brave   | ✅        |
+| Opera   | ✅        |
 
 ---
 
