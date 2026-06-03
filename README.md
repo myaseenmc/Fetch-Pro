@@ -131,58 +131,6 @@ Robust recovery system for unstable networks.
 
 Runs entirely in the browser.
 
-### No Installation Required
-
-Simply open:
-
-```text
-index.html
-```
-
-or host the files on any static web server.
-
----
-
-# 🧩 Userscript Support
-
-The repository includes:
-
-```text
-m3u8-downloader.user.js
-```
-
-### Features
-
-* Detects M3U8 streams automatically
-* Integrates with supported websites
-* One-click extraction
-* Browser extension/userscript workflow
-
-Compatible with:
-
-* Tampermonkey
-* Violentmonkey
-* Greasemonkey
-
----
-
-# ⚙️ Service Worker Integration
-
-Includes:
-
-```text
-serviceWorker.js
-```
-
-### Purpose
-
-* Stream handling
-* File streaming optimization
-* Background processing
-* Improved browser download stability
-
----
-
 # 🛠 Tech Stack
 
 | Technology       | Purpose           |
@@ -215,43 +163,6 @@ m3u8-downloader/
 │
 ├── README.md
 └── README-EN.md
-```
-
----
-
-# 🚀 Getting Started
-
-## Option 1 — Run Locally
-
-Clone the repository:
-
-```bash
-git clone https://github.com/myaseenmc/m3u8-downloader.git
-cd m3u8-downloader
-```
-
-Open:
-
-```text
-index.html
-```
-
-in your browser.
-
----
-
-## Option 2 — Use Static Server
-
-Example using Python:
-
-```bash
-python -m http.server 8080
-```
-
-Then open:
-
-```text
-http://localhost:8080
 ```
 
 ---
@@ -295,22 +206,6 @@ All video processing happens client-side.
 
 ---
 
-# 📸 Screenshots
-
-Add screenshots inside:
-
-```text
-imgs/
-```
-
-Example:
-
-```md
-![Downloader UI](imgs/screenshot.png)
-```
-
----
-
 # 💡 Use Cases
 
 * Download online course videos
@@ -335,21 +230,6 @@ Only standard HLS streams are supported.
 
 ---
 
-# 🔮 Future Improvements
-
-Potential future enhancements:
-
-* Multi-threaded optimization
-* Better live-stream recording
-* Subtitle extraction
-* Audio-only export
-* Batch playlist downloads
-* Browser extension packaging
-* Mobile-friendly UI
-* FFmpeg WebAssembly integration
-
----
-
 # 👨‍💻 Author
 
 Created by Yaseen
@@ -360,11 +240,6 @@ GitHub:
 ---
 
 # 📄 License
-
-Add your preferred open-source license here.
-
-Example:
-
 ```text
 MIT License
 ```
