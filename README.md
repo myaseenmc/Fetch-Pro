@@ -256,6 +256,3 @@ Special thanks to:
 * StreamSaver.js
 * mux.js
 * Open-source HLS community
-
-::contentReference[oaicite:1]{index=1}
-```
